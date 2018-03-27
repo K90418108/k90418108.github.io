@@ -1,17 +1,65 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>王翊玲的首頁</title>
-  </head>
-<body background=boice.04.jpg text="#F08080">
-<img src="boice.01.jpg" height="180"	 width="150">
-<br>
-<b>
-<li>王翊玲<br>
-<li>學校:正修科技大學<br>
-<li>系所:進資工2甲<br>
-<li>生日:85/11/23<br>
-<li>興趣:聽音樂<br>
-</b>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片集</title>
+</head>
+<body onload="startClock()" onunload="stopClock()">
+       
+    <h2>照片集</h2>
+    <img src="images/pic00.jpg" alt="" onmousedown="this.src=nextImage()" 
+                                       onmouseover="this.src=randomImage()">
+    <div id="show"></div>           
+    <script>
+        var curIndex=0;
+        var imgArray = new Array();
+        var pics=9;
+        for(i=0;i<pics;i++)
+        {
+            imgArray[i]=new Image();
+            if(i<10)
+            imgArray[i].src="images/pic0"+i+".jpg";
+            else
+            imgArray[i].src="images/pic"+i+".jpg";
+        }
+        function nextImage(){
+            curIndex++;
+            curIndex=curIndex % pics;
+            return(imgArray[curIndex].src);
+        }
+        function randomImage(){
+            curIndex=Math.floor(Math.random()*pics);
+            return(imgArray[curIndex].src);
+        }
+        //時間
+        var timer = null;
+    // 顯示數字圖片
+function displayClock(num) {
+  var dig = parseInt(num/10);
+  var timetag="<img src='images\\" + dig + ".gif'>";
+  dig = num%10;
+  timetag +="<img src='images\\" + dig + ".gif'>";
+  return timetag;
+}
+// 停止計時
+function stopClock() {
+   clearTimeout(timer);
+}
+// 開始計時
+function startClock() {
+   var time = new Date();
+   // 取得時間
+   var hours = displayClock(time.getHours()) + ":";
+   var minutes = displayClock(time.getMinutes()) + ":";
+   var seconds = displayClock(time.getSeconds());
+   // 顯示時間
+   show.innerHTML = hours + minutes + seconds;
+   timer = setTimeout("startClock()",1000);
+}
+
+       </script>
+
+</body>
 </html>
