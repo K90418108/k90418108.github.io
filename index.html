@@ -1,65 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>照片集</title>
+  <head>
+    <title>大阪旅遊景點</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
-<body onload="startClock()" onunload="stopClock()">
-       
-    <h2>照片集</h2>
-    <img src="images/pic00.jpg" alt="" onmousedown="this.src=nextImage()" 
-                                       onmouseover="this.src=randomImage()">
-    <div id="show"></div>           
-    <script>
-        var curIndex=0;
-        var imgArray = new Array();
-        var pics=9;
-        for(i=0;i<pics;i++)
-        {
-            imgArray[i]=new Image();
-            if(i<10)
-            imgArray[i].src="images/pic0"+i+".jpg";
-            else
-            imgArray[i].src="images/pic"+i+".jpg";
-        }
-        function nextImage(){
-            curIndex++;
-            curIndex=curIndex % pics;
-            return(imgArray[curIndex].src);
-        }
-        function randomImage(){
-            curIndex=Math.floor(Math.random()*pics);
-            return(imgArray[curIndex].src);
-        }
-        //時間
-        var timer = null;
-    // 顯示數字圖片
-function displayClock(num) {
-  var dig = parseInt(num/10);
-  var timetag="<img src='images\\" + dig + ".gif'>";
-  dig = num%10;
-  timetag +="<img src='images\\" + dig + ".gif'>";
-  return timetag;
-}
-// 停止計時
-function stopClock() {
-   clearTimeout(timer);
-}
-// 開始計時
-function startClock() {
-   var time = new Date();
-   // 取得時間
-   var hours = displayClock(time.getHours()) + ":";
-   var minutes = displayClock(time.getMinutes()) + ":";
-   var seconds = displayClock(time.getSeconds());
-   // 顯示時間
-   show.innerHTML = hours + minutes + seconds;
-   timer = setTimeout("startClock()",1000);
-}
+	<body>
+		<div class="container">
+			<div clsaa="row header justify-content-md-center">
+				<div class="col-12">
+					<img src="pic/osaka.jpg" class="rounded mx-auto d-block" alt="" style="width:80px;height:80px;">
+				</div>
+				<div class="row header justify-content-md-center h3" style="font-family:標楷體">
+					<h1 style="color:pink"><span>大阪旅遊景點</span></h1>
+				</div>
+				<div class="row header justify-content-md-center h4">
+					<span class="font-family:Comic Sans MS"style="background-color:LightGray;"></h1>OSAKA TOURIST ATTRACTIONS</span>
+				</div>
+			</div>
 
-       </script>
+			<div class="row justify-content-md-center">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>首頁</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-</body>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<div class="dropdown">
+									<a class="nav-link dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" href="#"><i class="far fa-hand-point-up" aria-hidden="true"></i>
+										大阪環球影城
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item action" href="index1.html">地圖顯示</a>
+										<a class="dropdown-item" href="index2.html">景點介紹</a>
+										<a class="dropdown-item" href="index3.html">園區導覽圖</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown">
+									<a class="nav-link dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" href="#"><i class="far fa-hand-point-up" aria-hidden="true"></i>
+										黑門市場
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item action" href="index1.html">地圖顯示</a>
+										<a class="dropdown-item" href="index4.html">景點介紹</a>
+										<a class="dropdown-item" href="index5.html">必吃美食</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown">
+									<a class="nav-link dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" href="#"><i class="far fa-hand-point-up" aria-hidden="true"></i>
+										道頓堀
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item action" href="index1.html">地圖顯示</a>
+										<a class="dropdown-item" href="index6.html">景點介紹</a>
+										<a class="dropdown-item" href="index7.html">必逛鞋店</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="dropdown">
+									<a class="nav-link dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" href="#"><i class="far fa-hand-point-up" aria-hidden="true"></i>
+										天王寺動物園
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item action" href="index1.html">地圖顯示</a>
+										<a class="dropdown-item" href="index8.html">景點介紹</a>
+										<a class="dropdown-item" href="index9.html">園區導覽圖</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+
+			<div class="row">
+				<div class="col"></div>
+				<div class="col">
+					<div clsaa="justify-content-md-center">
+						  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+							  <div class="carousel-inner">
+								  <div class="carousel-item active">
+									<img class="d-block w-100" src="pic/universalstudios.jpg" alt="First slide">
+								  </div>
+								  <div class="carousel-item">
+									  <img class="d-block w-100" src="pic/blackgatemarket .jpg" alt="Second slide">
+								  </div>
+								  <div class="carousel-item">
+									  <img class="d-block w-100" src="pic/dotonbori.jpg" alt="Third slide">
+								  </div>
+								  <div class="carousel-item">
+									  <img class="d-block w-100" src="pic/tennojizoo.jpg" alt="Fourth slide">
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+				<div class="col"></div>
+			</div>
+
+			<div class="row justify-content-md-center">
+				<div clsaa="row justify-content-md-center" >
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">大阪環球影城網路搜尋</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">黑門市場網路搜尋</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">道頓崛網路搜尋</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="myhome-tab" data-toggle="tab" href="#myhome" role="tab" aria-controls="contact" aria-selected="false">天王寺動物園網路搜尋</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<a class="btn btn-info w-100" href="https://www.google.com.tw/search?q=%E5%A4%A7%E9%98%AA%E7%92%B0%E7%90%83%E5%BD%B1%E5%9F%8E&oq=%E5%A4%A7%E9%98%AA&aqs=chrome.4.69i57j69i61l3j69i59l2.3781j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-google fa-1x" aria-hidden="true">大阪環球影城</i></a>
+								<br />
+								<img class="w-100" src="pic/universalstudios.jpg" alt="">
+							</div>
+							<div class="col-3"></div>
+						</div>
+
+					</div>
+					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<a class="btn btn-info w-100" href="https://www.google.com.tw/search?q=%E9%BB%91%E9%96%80%E5%B8%82%E5%A0%B4&oq=%E9%BB%91%E9%96%80%E5%B8%82%E5%A0%B4&aqs=chrome..69i57j69i59l2j69i61j69i60j69i61.4957j1j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-google fa-1x" aria-hidden="true">黑門市場</i></a>
+								<br />
+								<img class="w-100" src="pic/blackgatemarket .jpg" alt="">
+							</div>
+							<div class="col-3"></div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<a class="btn btn-info w-100" href="https://www.google.com.tw/search?q=%E9%81%93%E9%A0%93%E5%A0%80&oq=%E9%81%93%E9%A0%93%E5%A0%80&aqs=chrome..69i57j69i59j69i60l2j69i59j69i61.3509j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-google fa-1x" aria-hidden="true">道頓崛</i></a>
+								<br />
+								<img class="w-100" src="pic/dotonbori.jpg" alt="">
+							</div>
+							<div class="col-3"></div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="myhome" role="tabpanel" aria-labelledby="myhome-tab">
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<a class="btn btn-info w-100" href="https://www.google.com.tw/search?q=%E5%A4%A9%E7%8E%8B%E5%AF%BA%E5%8B%95%E7%89%A9%E5%9C%92&oq=%E5%A4%A9%E7%8E%8B%E5%AF%BA%E5%8B%95%E7%89%A9%E5%9C%92&aqs=chrome..69i57j69i61l3j69i59l2.6285j1j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-google fa-1x" aria-hidden="true">天王寺動物園</i></a>
+								<br />
+								<img class="w-100" src="pic/tennojizoo.jpg" alt="">
+							</div>
+							<div class="col-3"></div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
 </html>
